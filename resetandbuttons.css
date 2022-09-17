@@ -1,6 +1,53 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 body {
   font-family: -apple-system, 'AaarghNormal','PlastikItaliqueRegular','KHGroteskRegular','ConnectionRegular','CrosterianRegular' ,'FuturaRennerRegular', BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+}  
+
+
+
 
 
 .glow-on-hover:before {
@@ -49,38 +96,7 @@ body {
       50% { background-position: 400% 0; }
       100% { background-position: 0 0; }
   }
-  button {
-    margin-top: 20px;
-  }
 
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  a {
-    background:
-      linear-gradient(
-        to right,
-        rgba(100, 200, 200, 1),
-        rgba(100, 200, 200, 1)
-      ),
-      linear-gradient(
-        to right,
-        rgba(255, 0, 0, 1),
-        rgba(255, 0, 180, 1),
-        rgba(0, 100, 200, 1)
-    );
-    background-size: 100% 3px, 0 3px;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 400ms;
-  }
-
-  a:hover {
-    background-size: 0 3px, 100% 3px;
-  }
   .glow-on-hover {
     width: 220px;
     height: 50px;
@@ -92,3 +108,48 @@ body {
     position: relative;
     z-index: 0;
   }
+
+
+
+  a {
+    font-weight: 500;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    }
+    a:hover {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    }
+    a::before {
+    position: absolute;
+    top: -2px;
+    left: -7px;
+    box-sizing: content-box;
+    padding: 0 5px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #741c7c;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    }
+    a:hover::before {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    }
+   
+    a {
+         margin-top: 2px;
+   
+       }
+   
+     a {
+       color: white;
+     }
